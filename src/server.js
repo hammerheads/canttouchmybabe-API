@@ -19,7 +19,7 @@ var customers = [{
     email: 'chonco@slavs.com',
     phone: '967263998',
     babes: [],
-    pic: 'https://gpluseurope.com/wp-content/uploads/Mauro-profile-picture.jpg'
+    pic: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXQr48batW8bR6Nvm1N9B5z3u_OZAMbQyOnpNlTvbxgLiKNOHhaw'
 }, {
     id: 2,
     firstName: 'Rolo',
@@ -27,7 +27,7 @@ var customers = [{
     email: 'rolao@dutchman.com',
     phone: '913477825',
     babes: [],
-    pic: 'https://gpluseurope.com/wp-content/uploads/Mauro-profile-picture.jpg'
+    pic: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXQr48batW8bR6Nvm1N9B5z3u_OZAMbQyOnpNlTvbxgLiKNOHhaw'
 }];
 
 var babes = [];
@@ -38,10 +38,10 @@ app.get('/customer/:id', (req, res) => res.send(getCustomer(req.params.id)));
 
 
 // ADD A BABE
-app.post('/customer/:cid/babe', function(req, res) {
+app.post('/customer/:cid/babe', function(req, res) {    
 
-    var babe = req.body;
-    
+    var babe = req.body;    
+
     var customer = getCustomer(req.params.cid);    
 
     babe.id = babes.length+1;
@@ -74,7 +74,6 @@ function getCustomer(id) {
             return customers[i];
         }
     }
-    
 }
 
 
@@ -85,7 +84,6 @@ function getBabe(customer, id) {
             return customer.babes[i];
         }
     }
-    
 }
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
